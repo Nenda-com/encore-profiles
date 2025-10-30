@@ -1,3 +1,4 @@
+program-nenda: program-nenda.yml
 program: program.yml
 program-x265: program-x265.yml
 program-kf: program-kf.yml
