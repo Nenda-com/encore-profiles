@@ -1,7 +1,7 @@
 # This profile is based on the program.yml profile created by Sveriges Television AB and modified for Nenda
 # See https://github.com/svt/encore/blob/master/src/test/resources/profile/program.yml
-name: program-nenda
-description: Nenda program profile
+name: vod-nenda
+description: Nenda VOD profile
 scaling: bicubic
 encodes:
   - type: X264Encode
@@ -17,7 +17,7 @@ encodes:
       pix_fmt: yuv420p
       force_key_frames: expr:not(mod(n,96))
       profile:v: high
-      level: 4.2
+      level: 4.1
     x264-params:
       deblock: 0,0
       aq-mode: 1
@@ -35,7 +35,7 @@ encodes:
       merange: 16
       cabac: 1
       partitions: all
-      ref: 4
+      ref: 3
       scenecut: 40
       subme: 9
       trellis: 2
