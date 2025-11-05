@@ -1,4 +1,5 @@
 vod-nenda: vod-nenda.yml
+vod-nenda-no-bpyramid: vod-nenda-no-bpyramid.yml
 program: program.yml
 program-x265: program-x265.yml
 program-kf: program-kf.yml
