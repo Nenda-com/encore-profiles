@@ -1,6 +1,6 @@
-# Nenda VOD profile with 16:9 crop and b-pyramid kept
+# Nenda VOD profile with 16:9 center-crop per ladder
 name: vod-nenda
-description: Nenda VOD encodes forcing 16:9 crop, no thumbnails, safe for all Encore builds
+description: Nenda VOD encodes with 16:9 center crop
 scaling: bicubic
 
 encodes:
@@ -8,6 +8,9 @@ encodes:
     suffix: _x264_3100
     twoPass: false
     height: 1080
+    filters:
+      - "scale=-2:1080"
+      - "crop=1920:1080:(in_w-1920)/2:(in_h-1080)/2"
     params:
       b:v: 3100k
       maxrate: 4700k
@@ -19,7 +22,6 @@ encodes:
       profile:v: high
       level: 4.1
       movflags: +faststart
-      vf: "crop=if(gt(iw/ih,16/9),ih*16/9,iw):ih:if(gt(iw/ih,16/9),(iw-ih*16/9)/2,0):0"
     x264-params:
       deblock: 0,0
       aq-mode: 1
@@ -53,6 +55,9 @@ encodes:
     suffix: _x264_2069
     twoPass: false
     height: 720
+    filters:
+      - "scale=-2:720"
+      - "crop=1280:720:(in_w-1280)/2:(in_h-720)/2"
     params:
       b:v: 2069k
       maxrate: 3104k
@@ -64,7 +69,6 @@ encodes:
       profile:v: main
       level: 3.1
       movflags: +faststart
-      vf: "crop=if(gt(iw/ih,16/9),ih*16/9,iw):ih:if(gt(iw/ih,16/9),(iw-ih*16/9)/2,0):0"
     x264-params:
       deblock: 0,0
       aq-mode: 1
@@ -98,6 +102,9 @@ encodes:
     suffix: _x264_1312
     twoPass: false
     height: 540
+    filters:
+      - "scale=-2:540"
+      - "crop=960:540:(in_w-960)/2:(in_h-540)/2"
     params:
       b:v: 1312k
       maxrate: 1968k
@@ -109,7 +116,6 @@ encodes:
       profile:v: main
       level: 3.1
       movflags: +faststart
-      vf: "crop=if(gt(iw/ih,16/9),ih*16/9,iw):ih:if(gt(iw/ih,16/9),(iw-ih*16/9)/2,0):0"
     x264-params:
       deblock: 0,0
       aq-mode: 1
@@ -143,6 +149,9 @@ encodes:
     suffix: _x264_806
     twoPass: false
     height: 360
+    filters:
+      - "scale=-2:360"
+      - "crop=640:360:(in_w-640)/2:(in_h-360)/2"
     params:
       b:v: 806k
       maxrate: 1209k
@@ -154,7 +163,6 @@ encodes:
       profile:v: main
       level: 3.1
       movflags: +faststart
-      vf: "crop=if(gt(iw/ih,16/9),ih*16/9,iw):ih:if(gt(iw/ih,16/9),(iw-ih*16/9)/2,0):0"
     x264-params:
       deblock: 0,0
       aq-mode: 1
@@ -188,6 +196,9 @@ encodes:
     suffix: _x264_324
     twoPass: false
     height: 234
+    filters:
+      - "scale=-2:234"
+      - "crop=416:234:(in_w-416)/2:(in_h-234)/2"
     params:
       b:v: 324k
       maxrate: 486k
@@ -199,7 +210,6 @@ encodes:
       profile:v: baseline
       level: 3.1
       movflags: +faststart
-      vf: "crop=if(gt(iw/ih,16/9),ih*16/9,iw):ih:if(gt(iw/ih,16/9),(iw-ih*16/9)/2,0):0"
     x264-params:
       deblock: 0,0
       aq-mode: 1
