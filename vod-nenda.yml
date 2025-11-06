@@ -1,7 +1,7 @@
 # This profile is based on the program.yml profile created by Sveriges Television AB and modified for Nenda
 # See https://github.com/svt/encore/blob/master/src/test/resources/profile/program.yml
 name: vod-nenda
-description: Nenda VOD profile
+description: Nenda VOD profile (forces 16:9 by cropping landscape material)
 scaling: bicubic
 encodes:
   - type: X264Encode
@@ -18,6 +18,7 @@ encodes:
       force_key_frames: expr:not(mod(n,96))
       profile:v: high
       level: 4.1
+      vf: "crop='if(gt(iw/ih,16/9),ih*16/9,iw)':'ih':'if(gt(iw/ih,16/9),(iw-ih*16/9)/2,0)':'0'"
     x264-params:
       deblock: 0,0
       aq-mode: 1
@@ -61,6 +62,7 @@ encodes:
       force_key_frames: expr:not(mod(n,96))
       profile:v: main
       level: 3.1
+      vf: "crop='if(gt(iw/ih,16/9),ih*16/9,iw)':'ih':'if(gt(iw/ih,16/9),(iw-ih*16/9)/2,0)':'0'"
     x264-params:
       deblock: 0,0
       aq-mode: 1
@@ -104,6 +106,7 @@ encodes:
       force_key_frames: expr:not(mod(n,96))
       level: 3.1
       profile:v: main
+      vf: "crop='if(gt(iw/ih,16/9),ih*16/9,iw)':'ih':'if(gt(iw/ih,16/9),(iw-ih*16/9)/2,0)':'0'"
     x264-params:
       deblock: 0,0
       aq-mode: 1
@@ -147,6 +150,7 @@ encodes:
       force_key_frames: expr:not(mod(n,96))
       profile:v: main
       level: 3.1
+      vf: "crop='if(gt(iw/ih,16/9),ih*16/9,iw)':'ih':'if(gt(iw/ih,16/9),(iw-ih*16/9)/2,0)':'0'"
     x264-params:
       deblock: 0,0
       aq-mode: 1
@@ -190,6 +194,7 @@ encodes:
       force_key_frames: expr:not(mod(n,96))
       profile:v: baseline
       level: 3.1
+      vf: "crop='if(gt(iw/ih,16/9),ih*16/9,iw)':'ih':'if(gt(iw/ih,16/9),(iw-ih*16/9)/2,0)':'0'"
     x264-params:
       deblock: 0,0
       aq-mode: 1
