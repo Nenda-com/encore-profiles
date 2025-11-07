@@ -193,16 +193,16 @@ encodes:
       suffix: STEREO
 
   - type: X264Encode
-    suffix: _x264_324
+    suffix: _x264_420
     twoPass: false
     height: 234
     filters:
       - "scale=-2:234"
       - "crop=416:234:(in_w-416)/2:(in_h-234)/2"
     params:
-      b:v: 324k
-      maxrate: 486k
-      bufsize: 648k
+      b:v: 420k
+      maxrate: 630k
+      bufsize: 840k
       r: 25
       fps_mode: cfr
       pix_fmt: yuv420p
