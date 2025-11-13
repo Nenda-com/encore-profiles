@@ -4,7 +4,8 @@ Some basic transcoding profiles for testing encores.
 ## Transcoding profiles
 | Name | Description |
 | --- | --- |
-| vod-nenda | x264 ABR ladder with five rungs, stereo and surround audio, thumbnails, thumbnail map |
+| vod-nenda | x264 ABR ladder with five rungs, with 16:9 center-crop per ladder |
+| vod-nenda-alcom-compatibility | v264 ABR ladder with five rungs with 16:9 center-crop per ladder, b-pyramid disabled, standardized GOP and keyframe intervals for Alcom compatibility |
 | program | x264 ABR ladder with five rungs, stereo and surround audio, thumbnails, thumbnail map |
 | program-x265 | x265 ABR ladder with five rungs, stereo and surround audio, thumbnails, thumbnail map |
 | program-kf | x265 ABR ladder with five rungs, stereo and surround audio, thumbnails, thumbnail map, option to override keyframe injections |
