@@ -1,6 +1,6 @@
 # This profile is based on the program.yml profile created by Sveriges Television AB and modified for Nenda
 # See https://github.com/svt/encore/blob/master/src/test/resources/profile/program.yml
-name: vod-nenda-no-bpyramid
+name: vod-nenda-alcom-compatibility
 description: Nenda VOD profile (no b-pyramid for top rung)
 scaling: bicubic
 encodes:
